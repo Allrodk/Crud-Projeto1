@@ -33,8 +33,16 @@ const cavaleiros = [
     return cavaleiros.find((cavaleiro) => cavaleiro.id == id);
   };
   
+  const createCavaleiroService = (newCavaleiro) => {
+    const newId = cavaleiros.length + 1;
+    newCavaleiro.id = newId;
+    cavaleiros.push(newCavaleiro);
+    return newCavaleiro;
+  };
+  
   module.exports = {
     findCavaleirosService,
     findCavaleiroByIdService,
+    createCavaleiroService,
   };
   
