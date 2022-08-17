@@ -13,6 +13,16 @@ const findCavaleiroByIdController = (req, res) => {
 };
 
 const createCavaleiroController = (req, res) => {
+  if (
+    !req.body ||
+    !req.body.nome ||
+    !req.body.constelacao ||
+    !req.body.foto ||
+    !req.body.idade ||
+    !req.body.pais
+  ) {
+    return res.send('Preencha os campos corretamente!');
+  }
   const newCavaleiro = cavaleirosService.createCavaleiroService(req.body);
   res.send(newCavaleiro);
 };
