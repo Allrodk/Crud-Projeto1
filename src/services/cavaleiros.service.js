@@ -49,10 +49,19 @@ const cavaleiros = [
     return cavaleiroEdited;
   };
   
+  const deleteCavaleiroService = (id) => {
+    const cavaleiroIndex = cavaleiros.findIndex(
+      (cavaleiro) => cavaleiro.id == id,
+    );
+    delete cavaleiros[cavaleiroIndex];
+    return 'Deletado';
+  };
+  
   module.exports = {
     findCavaleirosService,
     findCavaleiroByIdService,
     createCavaleiroService,
     updateCavaleiroService,
+    deleteCavaleiroService,
   };
   

@@ -10,4 +10,6 @@ router.post('/create', cavaleirosController.createCavaleiroController);
 
 router.put('/update/:id', cavaleirosController.updateCavaleiroController);
 
+router.delete('/delete/:id', cavaleirosController.deleteCavaleiroController);
+
 module.exports = router;

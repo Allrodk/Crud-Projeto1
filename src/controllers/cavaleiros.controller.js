@@ -25,9 +25,15 @@ const updateCavaleiroController = (req, res) => {
   res.send(updatedCavaleiro);
 };
 
+const deleteCavaleiroController = (req, res) => {
+  cavaleirosService.deleteCavaleiroService(req.params.id);
+  res.send({ message: 'CAvaleiro Deletado com sucesso!' });
+};
+
 module.exports = {
   findCavaleirosController,
   findCavaleiroByIdController,
   createCavaleiroController,
   updateCavaleiroController,
+  deleteCavaleiroController,
 };
