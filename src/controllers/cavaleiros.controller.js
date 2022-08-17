@@ -17,8 +17,17 @@ const createCavaleiroController = (req, res) => {
   res.send(newCavaleiro);
 };
 
+const updateCavaleiroController = (req, res) => {
+  const updatedCavaleiro = cavaleirosService.updateCavaleiroService(
+    req.params.id,
+    req.body,
+  );
+  res.send(updatedCavaleiro);
+};
+
 module.exports = {
   findCavaleirosController,
   findCavaleiroByIdController,
   createCavaleiroController,
+  updateCavaleiroController,
 };

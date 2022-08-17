@@ -40,9 +40,19 @@ const cavaleiros = [
     return newCavaleiro;
   };
   
+  const updateCavaleiroService = (id, cavaleiroEdited) => {
+    cavaleiroEdited['id'] = id;
+    const cavaleiroIndex = cavaleiros.findIndex(
+      (cavaleiro) => cavaleiro.id == id,
+    );
+    cavaleiros[cavaleiroIndex] = cavaleiroEdited;
+    return cavaleiroEdited;
+  };
+  
   module.exports = {
     findCavaleirosService,
     findCavaleiroByIdService,
     createCavaleiroService,
+    updateCavaleiroService,
   };
   

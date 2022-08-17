@@ -8,4 +8,6 @@ router.get('/:id', cavaleirosController.findCavaleiroByIdController);
 
 router.post('/create', cavaleirosController.createCavaleiroController);
 
+router.put('/update/:id', cavaleirosController.updateCavaleiroController);
+
 module.exports = router;
